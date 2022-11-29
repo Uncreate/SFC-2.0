@@ -1,8 +1,10 @@
+<body style="background: linear-gradient(to top, #BABABA 0%, #880000 100%); color: white">
 {% extends 'authenticate/base.html' %}
 
 {% block content %}
-<h1>Register</h1>
-
+<div class="col-md-6 offset-md-3">
+<h2 class="text-center">Create New Account</h2>
+<br>
 
 <form method="POST" action="{% url 'register' %}">
         {% csrf_token %}

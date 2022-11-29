@@ -11,7 +11,7 @@
  </head>
  <body>
 
-        <nav class="navbar navbar-expand-lg" style="background: #880000; background: linear-gradient(to top, #880000 0%, #BABABA 100%);">
+        <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to top, #880000 0%, #BABABA 100%); ">
                 <div class="container-fluid">
                         <a class="navbar-brand" href="{% url 'home' %}" style="color: White">Shop Floor Companion v2.0</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
                         {% if user.is_authenticated %}
 
                         <li class="nav-item">
-                          <a class="nav-link" href="#"style="color: White">Welcome, {{user.first_name}}</a>
+                          <a class="nav-link" href="{% url 'edit_profile' %}"style="color: White">Welcome, {{user.first_name}}</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="/logout"style="color: White">Logout</a>
@@ -42,7 +42,12 @@
                 </div>
         </nav>
          <br>
-         <div class="container" >
+
+
+         </div>
+
+
+         <div class="container">
                  {% if messages %}
                         {% for message in messages %}
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -51,8 +56,11 @@
                         </div>
                         {% endfor %}
                 {% endif %}
+
                  {% block content %}
 
+
+                        </div>
                  {% endblock %}
          </div>
 

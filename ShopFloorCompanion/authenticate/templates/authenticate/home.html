@@ -1,9 +1,10 @@
+<body style="background: linear-gradient(to top, #BABABA 0%, #880000 100%); color: white">
 {% extends 'authenticate/base.html' %}
 
 {% block content %}
 <h1>Home Page</h1>
 {% if user.is_authenticated %}
-        <p>Name: {{ user.first_name }} {{ user.last_name }}</p> 
+        <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
         <p>Username: {{ user.username}}</p>
         <p>Email: {{ user.email }}</p>
 
