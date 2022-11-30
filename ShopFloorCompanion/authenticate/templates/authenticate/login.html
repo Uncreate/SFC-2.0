@@ -1,9 +1,9 @@
-<body style="background: linear-gradient(to top, #BABABA 0%, #880000 100%); color: white">
+<body class="text-center" style="background: linear-gradient(to top, #BABABA 0%, #880000 100%); color: white">
 {% extends 'authenticate/base.html' %}
 
 {% block content %}
 
-<h2 class="text-center">Login</h2>
+<h2>Login</h2>
 <div class="col-md-6 offset-md-3">
         <form method="POST">
                 {% csrf_token %}

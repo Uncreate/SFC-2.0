@@ -1,3 +1,4 @@
+{% load bootstrap_icons %}
 <!doctype html>
 <html lang="en">
  <head>
@@ -24,17 +25,17 @@
                         {% if user.is_authenticated %}
 
                         <li class="nav-item">
-                          <a class="nav-link" href="{% url 'edit_profile' %}"style="color: White">Welcome, {{user.first_name}}</a>
+                          <a class="nav-link" href="{% url 'edit_profile' %}"style="color: White">{% bs_icon 'person' %} Welcome, {{user.first_name}}</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="/logout"style="color: White">Logout</a>
+                          <a class="nav-link" href="/logout"style="color: White"> Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                          <a class="nav-link" href="{% url 'login' %}" style="color: White">Login</a>
+                          <a class="nav-link" href="{% url 'login' %}" style="color: White">{% bs_icon 'person-circle' %} Login</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{% url 'register' %}" style="color: White">Register</a>
+                          <a class="nav-link" href="{% url 'register' %}" style="color: White">{% bs_icon 'person-add' %} Create Account</a>
                         </li>
 
                         {% endif %}

@@ -1,8 +1,8 @@
-<body style="background: linear-gradient(to top, #BABABA 0%, #880000 100%); color: white">
+<body class="text-center" style="background: linear-gradient(to top, #BABABA 0%, #880000 100%); color: white">
 {% extends 'authenticate/base.html' %}
 
 {% block content %}
-<h1>Home Page</h1>
+
 {% if user.is_authenticated %}
         <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
         <p>Username: {{ user.username}}</p>
@@ -10,6 +10,7 @@
 
 
 {% endif %}
-
+<br>
+<h2>Welcome to Shop Floor Companion v2.0, please login or create a new account.</h2>
 
 {% endblock %}
