@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib import messages
 from .forms import SignUpForm, EditProfileForm
+from .models import ToolOrder
 # Create your views here.
 def home(request):
     return render(request, 'authenticate/home.html', {})
@@ -71,3 +72,7 @@ def change_password(request):
 
 	context = {'form': form}
 	return render(request, 'authenticate/change_password.html', context)
+
+def tool_builder(request):
+    all_items = ToolOrder.objects.all
+    return render(request, 'authenticate/tool_builder.html', {'all_items' : all_items})

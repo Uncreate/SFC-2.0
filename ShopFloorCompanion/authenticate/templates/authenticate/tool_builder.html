@@ -1,0 +1,39 @@
+<body style="background: linear-gradient(to top, #BABABA 0%, #880000 100%); color: white">
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+
+
+        <table class="table  table-bordered" style="color: white">
+                <thead>
+                  <tr>
+                    <th scope="col">ID #</th>
+                    <th scope="col">Machine Number</th>
+                    <th scope="col">Part Number</th>
+                    <th scope="col">Ordered By</th>
+                    <th scope="col">Date/Time Needed</th>
+                    <th scope="col">Tools Ordered</th>
+                    <th scope="col">Comments</th>
+                  </tr>
+                </thead>
+        {% if all_items %}
+
+                {% for orders in all_items %}
+                        <tbody><tr style="color: white">
+                                <td>{{ orders.id }}</td>
+                                <td>{{ orders.machine_num }}</td>
+                                <td>{{ orders.part_num }}</td>
+                                <td>{{ orders.name }}</td>
+                                <td>{{ orders.needed }}</td>
+                                <td><ul><li>{{ orders.tools }}</li></ul></td>
+                                <td>{{ orders.comments }}</td>
+                        </tr>
+                        </tbody>
+
+                {% endfor %}
+        </table>
+        {% endif %}
+
+
+{% endblock %}
