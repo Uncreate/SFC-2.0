@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authenticate',
     'django_bootstrap_icons',
+    'tooling',
 ]
 
 MIDDLEWARE = [
